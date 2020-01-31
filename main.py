@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     data = Data.load(args.dataset)
     data.print_statisitcs()
-    data.split_setting = [20, 500]
+    #data.split_setting = [20, 500]
     data.update_mask()
 
     # accessing adjacecny matrix
