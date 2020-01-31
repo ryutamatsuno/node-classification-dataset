@@ -46,16 +46,6 @@ def parse_index_file(filename):
 
 
 
-
-
-def preprocess_features(features):
-    rowsum = features.sum(dim=1, keepdim=True)
-    rowsum[rowsum == 0] = 1
-    features = features / rowsum
-    return features
-
-
-
 def get_largest_component(G):
     if nx.number_connected_components(G) == 1:
         return G

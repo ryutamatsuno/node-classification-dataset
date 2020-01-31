@@ -51,8 +51,7 @@ def index_to_mask(index, size):
     mask[index] = 1
     return mask
 
-def split_data(labels: torch.Tensor, n_train_per_class: int, n_val: int, seed) -> (
-torch.Tensor, torch.Tensor, torch.Tensor):
+def split_data(labels: torch.Tensor, n_train_per_class: int, n_val: int, seed) -> (torch.Tensor, torch.Tensor, torch.Tensor):
     np.random.seed(seed)
     n_class = int(torch.max(labels)) + 1
     train_idx = np.array([], dtype=np.int64)
@@ -71,6 +70,12 @@ torch.Tensor, torch.Tensor, torch.Tensor):
     val_mask = index_to_mask(val_idx, labels.size(0))
     test_mask = index_to_mask(test_idx, labels.size(0))
     return train_mask, val_mask, test_mask
+
+def preprocess_features(features:torch.Tensor):
+    rowsum = features.sum(dim=1, keepdim=True)
+    rowsum[rowsum == 0] = 1
+    features = features / rowsum
+    return features
 
 
 class Data(object):
