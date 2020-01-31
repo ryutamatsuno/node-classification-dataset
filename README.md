@@ -13,13 +13,20 @@ data.print_statisitcs()
 data.split_setting = [20, 500] # or you can modify split.txt in /data/{dataset_name} to set this
 data.update_mask()
 
-# accessing adjacecny matrix
-A = data.raw_adj.to_dense() # data.adj is sparse tensor
+# accessing adjacecny matrix(torch.Tensor)
+A = data.raw_adj.to_dense() # data.adj is pytorch sparse tensor
 
-# accessing normalied adjacency matrix
+# accessing normalied adjacency matrix(torch.Tensor)
 norm_A = data.norm_adj.to_dense()
 
+# features(torch.Tensor)
+data.features
+
+# labels(torch.Tensor)
+data.labels
 ```
+
+See the Data.py file for the details.
 
 
 ## NOTE
