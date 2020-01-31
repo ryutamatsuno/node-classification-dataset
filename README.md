@@ -29,9 +29,9 @@ data.labels
 See the Data.py file for the details.
 
 
-## NOTE
-
-Do not use this repository for paper works. PLEASE cite appropriate github repos, and proper papers for the tasks. You may refer to the Thanks section below.
+## NOTE!!
+- In the dataset, it ONLY contains the largest component!! If you want to use WHOLE graph(s) please modify 'convert_raw_data' function.
+- Do not use this repository for paper works. PLEASE cite appropriate github repos, and proper papers for the tasks. You may refer to the Thanks section below.
 
 ## Thanks
 - https://github.com/kimiyoung/planetoid
